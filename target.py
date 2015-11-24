@@ -22,15 +22,15 @@ def get_point(rad_arr, dist):
 
 
 k, n = [int(x) for x in raw_input().strip().split(' ')]
-radiuses = [int(x) for x in raw_input().strip().split(' ')]
+radiuses = [float(x) for x in raw_input().strip().split(' ')]
 radiuses.append(-1)
 shots = []
 score = 0
 for x_i in xrange(n):
     (x, y) = map(int, raw_input().strip().split(' '))
-    dist = max(x, y)
+    dist = get_distance_to_origin(x,y)
     point = get_point(radiuses, dist)
-    print point
+    #print point
     score += point
 
 print score
